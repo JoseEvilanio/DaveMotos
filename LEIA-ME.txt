@@ -1,0 +1,120 @@
+╔════════════════════════════════════════════════════════════╗
+║                                                            ║
+║        🏍️  SISTEMA DE OFICINA DE MOTOS  🏍️                ║
+║                                                            ║
+║              Guia Rápido de Instalação                     ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
+
+
+📋 REQUISITOS
+═══════════════════════════════════════════════════════════
+
+Antes de instalar, você precisa ter:
+
+1. Node.js (versão 18 ou superior)
+   Download: https://nodejs.org/
+
+2. PostgreSQL (versão 14 ou superior)
+   Download: https://www.postgresql.org/download/
+
+
+🚀 INSTALAÇÃO RÁPIDA (WINDOWS)
+═══════════════════════════════════════════════════════════
+
+1. Instale Node.js e PostgreSQL (links acima)
+
+2. Crie o banco de dados:
+   - Abra o pgAdmin
+   - Crie um banco chamado "moto"
+   - Execute os scripts SQL da pasta "database"
+
+3. Clique duas vezes em: instalar.bat
+
+4. Aguarde a instalação concluir
+
+5. Um atalho será criado na área de trabalho!
+
+
+▶️ COMO USAR
+═══════════════════════════════════════════════════════════
+
+INICIAR O SISTEMA:
+  → Clique no atalho "Sistema Oficina Motos" na área de trabalho
+  OU
+  → Clique duas vezes em "start-sistema.bat"
+
+  O navegador abrirá automaticamente em http://localhost:3000
+  ⚠️  NÃO FECHE a janela preta enquanto usar o sistema!
+
+
+PARAR O SISTEMA:
+  → Feche a janela preta
+  OU
+  → Clique em "stop-sistema.bat"
+
+
+🔐 LOGIN PADRÃO
+═══════════════════════════════════════════════════════════
+
+Usuário: admin
+Senha: admin123
+
+⚠️  IMPORTANTE: Altere a senha após o primeiro acesso!
+
+
+🐧 LINUX / MAC
+═══════════════════════════════════════════════════════════
+
+1. Abra o terminal na pasta do sistema
+
+2. Execute:
+   chmod +x start-sistema.sh
+   ./start-sistema.sh
+
+3. O navegador abrirá automaticamente!
+
+4. Para parar: Pressione Ctrl+C no terminal
+
+
+🔧 PROBLEMAS COMUNS
+═══════════════════════════════════════════════════════════
+
+❌ "Node.js não encontrado"
+   → Instale o Node.js e reinicie o computador
+
+❌ "Erro ao conectar ao banco"
+   → Verifique se o PostgreSQL está rodando
+   → Verifique se o banco "moto" existe
+
+❌ "Porta já em uso"
+   → Outra instância está rodando
+   → Execute stop-sistema.bat e tente novamente
+
+❌ "Página não carrega"
+   → Aguarde 30 segundos após iniciar
+   → Atualize a página (F5)
+
+
+📚 DOCUMENTAÇÃO COMPLETA
+═══════════════════════════════════════════════════════════
+
+Para instruções detalhadas, consulte:
+→ MANUAL-INSTALACAO.md
+
+
+📞 SUPORTE
+═══════════════════════════════════════════════════════════
+
+Email: suporte@oficinamotos.com
+Telefone: (11) 1234-5678
+WhatsApp: (11) 91234-5678
+
+
+═══════════════════════════════════════════════════════════
+
+Desenvolvido com ❤️ para oficinas de motos
+
+Versão 1.0.0 - 2025
+
+═══════════════════════════════════════════════════════════

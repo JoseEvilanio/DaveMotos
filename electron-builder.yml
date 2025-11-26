@@ -1,0 +1,18 @@
+appId: com.moto.workshop
+productName: Sistema de Oficina de Motos
+directories:
+  output: release-v3
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - electron/**/*
+      - dist/**/*
+win:
+  target: nsis
+  icon: public/icons/icon-512x512.png
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  artifactName: "${productName}-Setup-${version}.${ext}"

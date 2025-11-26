@@ -1,0 +1,71 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+dist
+dist-ssr
+build
+dev-dist
+*.local
+
+# Electron build outputs
+release-v2
+release-v3
+out
+*.exe
+*.dmg
+*.AppImage
+*.deb
+*.rpm
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache and temporary files
+.cache
+*.tmp
+*.temp
+.eslintcache
+.stylelintcache
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Compressed files (releases)
+*.zip
+*.tar.gz
+*.rar
