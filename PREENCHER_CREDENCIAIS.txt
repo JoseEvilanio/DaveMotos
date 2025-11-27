@@ -1,0 +1,24 @@
+⚠️ AÇÃO NECESSÁRIA: PREENCHER CREDENCIAIS DO SUPABASE ⚠️
+
+O sistema está dando erro porque você ainda não configurou o arquivo .env com suas credenciais reais.
+Ele está tentando conectar em "seu-projeto.supabase.co", que é apenas um exemplo.
+
+SIGA ESTES PASSOS AGORA:
+
+1. Acesse https://supabase.com/dashboard
+2. Entre no seu projeto "DaveMotos" (ou crie um se não tiver)
+3. Vá em Settings (ícone de engrenagem) > API
+4. Copie a "Project URL"
+5. Copie a chave "anon" / "public"
+
+6. Abra o arquivo .env nesta pasta
+7. Cole a URL no lugar de: https://seu-projeto.supabase.co
+8. Cole a chave no lugar de: sua-chave-anon-key-aqui
+
+Exemplo de como deve ficar:
+VITE_SUPABASE_URL=https://abcdefghijklm.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+DEPOIS DE SALVAR:
+1. Pare o terminal (Ctrl+C)
+2. Rode "npm run dev" novamente

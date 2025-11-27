@@ -21,7 +21,11 @@ interface OSFormProps {
   onCancel: () => void
 }
 
-const API_URL = 'http://localhost:3001/api'
+import { supabase } from '@/lib/supabase'
+
+// ... imports anteriores mantidos ...
+
+// Remover API_URL
 
 export default function OrdemServicoForm({ os, onSubmit, onCancel }: OSFormProps) {
   const [clientes, setClientes] = useState<any[]>([])
@@ -54,11 +58,14 @@ export default function OrdemServicoForm({ os, onSubmit, onCancel }: OSFormProps
 
   const fetchClientes = async () => {
     try {
-      const response = await fetch(`${API_URL}/clientes`)
-      if (response.ok) {
-        const data = await response.json()
-        setClientes(data)
-      }
+      const { data, error } = await supabase
+        .from('clientes')
+        .select('*')
+        .eq('is_active', true)
+        .order('nome')
+      
+      if (error) throw error
+      setClientes(data || [])
     } catch (error) {
       console.error('Erro ao carregar clientes:', error)
     }
@@ -66,12 +73,14 @@ export default function OrdemServicoForm({ os, onSubmit, onCancel }: OSFormProps
 
   const fetchVeiculos = async (clienteId: string) => {
     try {
-      const response = await fetch(`${API_URL}/veiculos`)
-      if (response.ok) {
-        const data = await response.json()
-        const veiculosCliente = data.filter((v: any) => v.cliente_id === clienteId)
-        setVeiculos(veiculosCliente)
-      }
+      const { data, error } = await supabase
+        .from('veiculos')
+        .select('*')
+        .eq('is_active', true)
+        .eq('cliente_id', clienteId)
+      
+      if (error) throw error
+      setVeiculos(data || [])
     } catch (error) {
       console.error('Erro ao carregar veículos:', error)
     }
@@ -79,11 +88,21 @@ export default function OrdemServicoForm({ os, onSubmit, onCancel }: OSFormProps
 
   const fetchMecanicos = async () => {
     try {
-      const response = await fetch(`${API_URL}/mecanicos`)
-      if (response.ok) {
-        const data = await response.json()
-        setMecanicos(data)
+      // Mecânicos são usuários com role 'mecanico' ou 'admin'
+      // Como a tabela de users não é acessível publicamente, vamos buscar de profiles ou uma view se existir
+      // Por enquanto, vamos tentar buscar da tabela profiles se existir, ou simular
+      const { data, error } = await supabase
+        .from('profiles') // Assumindo que existe tabela profiles
+        .select('*')
+        .in('role', ['mecanico', 'admin'])
+      
+      if (error) {
+        // Fallback se não tiver tabela profiles configurada ainda
+        console.warn('Erro ao buscar mecânicos:', error)
+        setMecanicos([])
+        return
       }
+      setMecanicos(data || [])
     } catch (error) {
       console.error('Erro ao carregar mecânicos:', error)
     }

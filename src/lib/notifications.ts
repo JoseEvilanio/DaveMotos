@@ -150,6 +150,11 @@ export async function subscribeToPushNotifications(): Promise<PushSubscription |
     // Use: npx web-push generate-vapid-keys
     const vapidPublicKey = 'SUA_VAPID_PUBLIC_KEY_AQUI'
     
+    if (vapidPublicKey === 'SUA_VAPID_PUBLIC_KEY_AQUI') {
+      console.warn('VAPID Public Key não configurada. Push notifications desativadas.')
+      return null
+    }
+
     const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlBase64ToUint8Array(vapidPublicKey) as unknown as BufferSource

@@ -23,7 +23,7 @@ interface AgendamentoFormProps {
   onCancel: () => void
 }
 
-const API_URL = ((import.meta as any).env?.VITE_API_URL as string) || 'http://localhost:3001/api'
+
 
 export default function AgendamentoForm({ agendamento, onSubmit, onCancel }: AgendamentoFormProps) {
   const [clientes, setClientes] = useState<any[]>([])
